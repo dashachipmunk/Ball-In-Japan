@@ -5,13 +5,12 @@ using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
-    public Ball score;
+    public GameManager score;
     public Text totalScore;
 
     void Start()
     {
-        score.count = PlayerPrefs.GetInt("Score", score.count);
-
-        totalScore.text = "Total score: " + score.count.ToString();
+        score.scoreGame = PlayerPrefs.GetInt("Score", score.scoreGame);
+        totalScore.text = "Total score: " + score.scoreGame.ToString();
     }
 }
