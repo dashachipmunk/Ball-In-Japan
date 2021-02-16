@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 948421635904382260}
   - component: {fileID: 825381948811258549}
-  - component: {fileID: 2361624512501380178}
+  - component: {fileID: 6349248356056233709}
+  - component: {fileID: 186930303871130004}
   m_Layer: 0
   m_Name: green_square
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8053198745576233033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.09, y: -0.6, z: 0}
+  m_LocalPosition: {x: 4.09, y: -0.6, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +82,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2361624512501380178
+--- !u!61 &6349248356056233709
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053198745576233033}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8767123, y: 0.8767123}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8767123, y: 0.8767123}
+  m_EdgeRadius: 0
+--- !u!114 &186930303871130004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,4 +120,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c33ad88ea4a29418ef17e7663dbed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBlock: 1
+  points: 1
+  gamemanager: {fileID: 1247053224611311827, guid: 523078b8502765f4f96b0c285e3af86d,
+    type: 3}
+  lc: {fileID: 4571006389512474931, guid: 024627558c339c4479cf96d2da6cdc9e, type: 3}
+  lifeBlock: 2
+  invisible: 1
+  sRender: {fileID: 825381948811258549}
+  particlePrefab: {fileID: 4514920303696229565, guid: dbb75fc113d63b745983679ebdb63be3,
+    type: 3}
+  pickUpChance: {fileID: 2851797523719740105, guid: ea39494b6e71b06438c083018c49b226,
+    type: 3}

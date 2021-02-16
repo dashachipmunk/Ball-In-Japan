@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2851797523719740104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2851797523719740106}
+  - component: {fileID: 2851797523719740105}
+  m_Layer: 0
+  m_Name: PickUpPosibility
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2851797523719740106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851797523719740104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3787447, y: -0.15901126, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2851797523719740105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851797523719740104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e466577e6b9d47f418a35ce49a51b941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpList:
+  - pickUpName: Plus Score
+    pickUp: {fileID: 8337797861136397688, guid: eebc3dd918391d74a825fba202d20ded,
+      type: 3}
+    pickUpRarity: 80
+  - pickUpName: Minus Score
+    pickUp: {fileID: 3057972853312515166, guid: f5151de66b4b4a44bb362b04a222ffaf,
+      type: 3}
+    pickUpRarity: 81
+  - pickUpName: Pad Big
+    pickUp: {fileID: 1058804507845129288, guid: 94c01966eace0f2448ae8dfd461ad1d5,
+      type: 3}
+    pickUpRarity: 50
+  - pickUpName: Pad Small
+    pickUp: {fileID: 1298279263966517966, guid: b0a7426235d0ca64c8d0ab482b387da5,
+      type: 3}
+    pickUpRarity: 51
+  - pickUpName: New Ball
+    pickUp: {fileID: 8192954511811744367, guid: 8e84f88be9d53214ea0e71b12b6951ce,
+      type: 3}
+    pickUpRarity: 30
+  - pickUpName: Magnet
+    pickUp: {fileID: 8295280643065043841, guid: 726fe98caf5ae774ba07ce6312c91424,
+      type: 3}
+    pickUpRarity: 44
+  - pickUpName: Plus Life
+    pickUp: {fileID: 6465877890083220267, guid: 7927cff9565a553478a8c9212cece898,
+      type: 3}
+    pickUpRarity: 32
+  - pickUpName: Minus Life
+    pickUp: {fileID: 1738380819753431135, guid: ee52fc9766df57646b1ff8426801539a,
+      type: 3}
+    pickUpRarity: 33
+  - pickUpName: Small Ball
+    pickUp: {fileID: 5725858292078503862, guid: 98d5d7d293a5524428e24ba16c8d740c,
+      type: 3}
+    pickUpRarity: 41
+  - pickUpName: 3x Speed
+    pickUp: {fileID: 4407823804209154040, guid: f24740a7a2091234fa7f019b6fa1fcda,
+      type: 3}
+    pickUpRarity: 22
+  - pickUpName: 3x Speed
+    pickUp: {fileID: 1431433656759855611, guid: 9d8ef682000148549b5fdc314f546ca7,
+      type: 3}
+    pickUpRarity: 32
+  - pickUpName: 2x Speed
+    pickUp: {fileID: 8572995638740769453, guid: 55320acd0140ae242ad9ba42694a6d93,
+      type: 3}
+    pickUpRarity: 42
+  - pickUpName: Large Ball
+    pickUp: {fileID: 2589839795731429071, guid: 911f35b0592d83d4e92deab765dc936d,
+      type: 3}
+    pickUpRarity: 13
+  totalDropChance: 50

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1762786362773221281}
   - component: {fileID: 8205314324648625571}
   - component: {fileID: 4226192771802869309}
+  - component: {fileID: -7673839577135433988}
   m_Layer: 0
   m_Name: triangle
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9200536354141085927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6045513, y: -0.52702206, z: 510.27176}
+  m_LocalPosition: {x: 0.6045513, y: -0.52702206, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,3 +115,32 @@ PolygonCollider2D:
       - {x: -0.61, y: 0.64}
       - {x: -0.64, y: 0.62}
       - {x: -0.64, y: -0.61}
+--- !u!114 &-7673839577135433988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200536354141085927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c33ad88ea4a29418ef17e7663dbed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 1
+  gamemanager: {fileID: 1247053224611311827, guid: 523078b8502765f4f96b0c285e3af86d,
+    type: 3}
+  lc: {fileID: 4571006389512474931, guid: 024627558c339c4479cf96d2da6cdc9e, type: 3}
+  lifeBlock: 1
+  invisible: 0
+  sRender: {fileID: 8205314324648625571}
+  pickUpPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  particlePrefab: {fileID: 4514920303696229565, guid: dbb75fc113d63b745983679ebdb63be3,
+    type: 3}
+  pickUpChance: {fileID: 2851797523719740105, guid: ea39494b6e71b06438c083018c49b226,
+    type: 3}
