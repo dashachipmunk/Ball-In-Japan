@@ -7,7 +7,8 @@ public class LostBall : MonoBehaviour
     public Ball ball;
     public GameManager gM;
     public HeartsBar health;
-    // Start is called before the first frame update
+    public AudioClip lostBallSound;
+    AudioSource audioSource;
     void Start()
     {
         ball = FindObjectOfType<Ball>();

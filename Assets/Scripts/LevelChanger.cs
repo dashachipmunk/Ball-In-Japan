@@ -7,11 +7,7 @@ public class LevelChanger : MonoBehaviour
 {
     public int blocksCount;
     public GameManager score;
-    //private void Start()
-    //{
-    //    blocksCount = 0;
-    //}
-
+    
     public void BlockCreated()
     {
         blocksCount++;

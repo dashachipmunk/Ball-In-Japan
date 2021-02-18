@@ -6,35 +6,43 @@ using UnityEngine.UI;
 
 public class Blocks : MonoBehaviour
 {
-    [Tooltip("Очки за блок")]
+    [Header("Block's points")]
     public int points;
     public GameManager gamemanager;
     public LevelChanger lc;
-
-    [Tooltip("Жизнь блока")]
+    [Header("Block's lives")]
     public int lifeBlock;
     public bool invisible;
+    [Header("Block's sprites")]
+    public Sprite[] blockDamaged;
     public SpriteRenderer sRender;
-    [Tooltip("Пикапы и эффекты")]
+    [Header("Pick-ups and effects")]
     public GameObject particlePrefab;
-    public PickUpChance pickUpChance;
+    public GameObject[] pickUps;
 
+    [Header("Sounds")]
+    AudioSource audioSourceBlocks;
+    public AudioClip soundDestroy;
+    public AudioClip soundHit;
+    SoundManager soundManager;
+    private void Awake()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
     private void Start()
     {
-        //indexArray = Random.Range(0, pickUpPrefab.Length - 1);
         gamemanager = FindObjectOfType<GameManager>();
-        //pickUpChance = FindObjectOfType<PickUpChance>();
-
+        sRender = GetComponent<SpriteRenderer>();
         lc = FindObjectOfType<LevelChanger>();
         lc.BlockCreated();
         if (invisible)
         {
-            sRender = GetComponent<SpriteRenderer>();
             sRender.enabled = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        soundManager.PlaySound(soundHit);
         if (invisible)
         {
             sRender.enabled = true;
@@ -42,20 +50,42 @@ public class Blocks : MonoBehaviour
             return;
         }
         lifeBlock--;
+        for (int i = lifeBlock; i > 0; i--)
+        {
+            if (lifeBlock == i)
+            {
+                sRender.sprite = blockDamaged[i - 1];
+            }
+        }
+        
         if (lifeBlock <= 0)
         {
             DestroyBlock();
         }
+        
     }
     public void DestroyBlock()
     {
+        
         lc.BlockDestroyed();
         gamemanager.AddScore(points);
         Destroy(gameObject);
+        
         Instantiate(particlePrefab, transform.position, Quaternion.identity);
-        pickUpChance.CalculateChance();
-        //Instantiate(pickUpChance.PickUpList[pickUpChance.indexPickUp].pickUp, transform.position, Quaternion.identity);
+        PickUpChance();
     }
-
+    public void PickUpChance()
+    {
+        int randomValue = Random.Range(0, 40);
+        Debug.Log("Random value " + randomValue);
+        for (int i = 0; i < pickUps.Length; i++)
+        {
+            if (randomValue == i)
+            {
+                Instantiate(pickUps[i], transform.position, Quaternion.identity);
+            }
+            
+        }
+    }
 }
 

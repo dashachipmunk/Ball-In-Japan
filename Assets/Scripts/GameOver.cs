@@ -10,7 +10,7 @@ public class GameOver : MonoBehaviour
 
     void Start()
     {
-        score.score = PlayerPrefs.GetInt("Score", score.score);
+        score = FindObjectOfType<GameManager>();
         totalScore.text = "Total score: " + score.score.ToString();
     }
     

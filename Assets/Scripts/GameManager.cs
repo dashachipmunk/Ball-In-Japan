@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject pausePanel;
     private void Awake()
     {
+        
         GameManager[] gameManagers = FindObjectsOfType<GameManager>();
         for (int i = 0; i < gameManagers.Length; i++)
         {
