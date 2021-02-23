@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     AudioSource audioSource;
     public GameObject bgSound;
+    // Start is called before the first frame update
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -20,4 +21,5 @@ public class SoundManager : MonoBehaviour
     {
         audioSource.PlayOneShot(sound);
     }
+   
 }

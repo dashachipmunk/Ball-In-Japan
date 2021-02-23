@@ -3,32 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
 public class HeartsBar : MonoBehaviour
 {
-    [Tooltip("Изображение сердечек")]
+    [Header("Hearts images")]
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
-    [Tooltip("Жизни")]
+
+    [Header("Lives")]
     public int health;
     public int healthNumber;
-    [Tooltip("Мячик")]
+
+    [Header("Ball")]
     public Ball ball;
-    [Tooltip("Закончились жизни")]
+
+    [Header("Game Over")]
     public GameObject gameOverPanel;
     public GameManager score;
     public Text totalScore;
     public bool isDead;
     private void Start()
     {
-        isDead = false;
-        for (int j = 0; j < hearts.Length; j++)
-        {
-            hearts[j].enabled = false;
-        }
-        Hearts();
+        HeartsStart();
     }
 
     public void MinusHeart()
@@ -69,15 +65,19 @@ public class HeartsBar : MonoBehaviour
                 healthNumber++;
                 hearts[healthNumber - 1].enabled = true;
                 health++;
-            }            
+            }
         }
         else
         {
             MinusHeart();
         }
     }
-    public void Hearts()
+    public void HeartsStart()
     {
+        for (int j = 0; j < hearts.Length; j++)
+        {
+            hearts[j].enabled = false;
+        }
         for (int k = 0; k < healthNumber; k++)
         {
             hearts[k].enabled = true;
@@ -89,9 +89,10 @@ public class HeartsBar : MonoBehaviour
         if (health <= 0)
         {
             isDead = true;
-            gameOverPanel.active = true;
+            gameOverPanel.SetActive(true);
             Time.timeScale = 0f;
             totalScore.text = "Total score: " + score.score.ToString();
+            
         }
     }
 }

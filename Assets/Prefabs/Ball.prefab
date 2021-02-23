@@ -79,7 +79,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.55555344
+        value: 0.5
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -165,7 +165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7730889725275115167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.93, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7730889724460028647}
@@ -188,7 +188,7 @@ MonoBehaviour:
   rb: {fileID: 7730889725275115161}
   initialSpeed: 8
   currentSpeed: 0
-  ballSize: 0
+  ballSize: 1
   bSpeed: {fileID: -4622119576100072067, guid: 55320acd0140ae242ad9ba42694a6d93, type: 3}
   bScale: {fileID: 7973855946587333443, guid: 911f35b0592d83d4e92deab765dc936d, type: 3}
   yPosition: 0
@@ -199,8 +199,7 @@ MonoBehaviour:
   explodeEffect: {fileID: 1711323888389144995}
   pad: {fileID: 0}
   trailRenderer: {fileID: 7730889724460028640}
-  explodeSoundBall: {fileID: 8300000, guid: 1296b06cf031e2149bd3400c193eab9a, type: 3}
-  hitBall: {fileID: 0}
+  ballHitSmth: {fileID: 8300000, guid: c3bacb1fa74833d43bcca82a295c7024, type: 3}
 --- !u!212 &7730889725275115162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -297,11 +296,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c3bacb1fa74833d43bcca82a295c7024, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1296b06cf031e2149bd3400c193eab9a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.06
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

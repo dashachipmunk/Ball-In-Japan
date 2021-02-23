@@ -13,25 +13,27 @@ public class Ball : MonoBehaviour
     public float ballSize;
     public PickUpSpeed bSpeed;
     public PickUpBallScale bScale;
+
     [Header("Ball's position")]
     public float yPosition;
     public float xDelta;
     public float yDelta;
     bool isStarted;
     bool isMagnetActive;
+
     [Header("Explode")]
     public float explodeRadius;
     public bool isExplosive;
     public GameObject explodeEffect;
+
     [Header("Pad")]
     public Player pad;
     public TrailRenderer trailRenderer;
+
     [Header("Sounds")]
     AudioSource audioSource;
-    public AudioClip explodeSoundBall;
-    public AudioClip hitBall;
-
-    bool isFaster;
+    //public AudioClip explodeSoundBall;
+    public AudioClip ballHitSmth;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -41,9 +43,7 @@ public class Ball : MonoBehaviour
         ballSize = 1f;
         currentSpeed = initialSpeed;
         yPosition = transform.position.y;
-        trailRenderer = GetComponent<TrailRenderer>();
         isExplosive = false;
-        
     }
     private void Update()
     {
@@ -62,15 +62,13 @@ public class Ball : MonoBehaviour
     }
     public void ActivateExplode()
     {
-        isExplosive = true;
         explodeEffect.SetActive(true);
-        print(isExplosive);
-        audioSource.clip = explodeSoundBall;
+        audioSource.Play();
+        isExplosive = true;
     }
     public void MultiplySpeed(float speedCoeff)
     {
         currentSpeed *= speedCoeff;
-        isFaster = true;
     }
     public void MagnetActivate()
     {
@@ -78,37 +76,22 @@ public class Ball : MonoBehaviour
     }
     public void BallScale(float ballScale)
     {
+        isStarted = true;
+        StartBall();
         ballSize = ballScale;
         transform.localScale = new Vector3(ballSize, ballSize, ballSize);
+        trailRenderer.startWidth = ballSize / 2;
     }
     public void DuplicateBall()
     {
         Ball originalBall = this;
         Ball newBall = Instantiate(originalBall);
-        if (isFaster)
-        {
-            newBall.currentSpeed = currentSpeed;
-        }
-       
         newBall.StartBall();
-        if (isExplosive)
-        {
-            newBall.ActivateExplode();
-        }
-        //if (ballSize != 1f)
-        //{
-        //    newBall.BallScale(bScale.ballScale);
-        //}
-        
-        if (isMagnetActive)
-        {
-            newBall.MagnetActivate();
-        }
     }
     void StartBall()
     {
         float randomX = Random.Range(0, 0);
-        Vector2 direction = new Vector2(randomX, 1);
+        Vector2 direction = new Vector2(randomX, 4f);
         Vector2 force = direction.normalized * currentSpeed;
         rb.velocity = force;
         isStarted = true;
@@ -122,7 +105,10 @@ public class Ball : MonoBehaviour
     {
         currentSpeed = initialSpeed;
         isMagnetActive = false;
+        isExplosive = false;
+        explodeEffect.SetActive(false);
         ballSize = 1f;
+        trailRenderer.startWidth = 0.5f;
         transform.localScale = new Vector3(ballSize, ballSize, ballSize);
         isStarted = false;
         transform.position = new Vector3(pad.transform.position.x + xDelta, yPosition, 0);
@@ -147,15 +133,16 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        audioSource.Play();
+        audioSource.PlayOneShot(ballHitSmth);
         if (isMagnetActive && collision.gameObject.CompareTag("Player"))
         {
+            //audioSource.Play();
             xDelta = transform.position.x - pad.transform.position.x;
             float newYPosition = transform.position.y;
             isStarted = false;
             rb.velocity = Vector2.zero;
             transform.position = new Vector3(pad.transform.position.x + xDelta, newYPosition, 0);
-            
+
         }
         if (isExplosive && collision.gameObject.CompareTag("block"))
         {

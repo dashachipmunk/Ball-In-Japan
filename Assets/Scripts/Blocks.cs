@@ -10,24 +10,25 @@ public class Blocks : MonoBehaviour
     public int points;
     public GameManager gamemanager;
     public LevelChanger lc;
+
     [Header("Block's lives")]
     public int lifeBlock;
     public bool invisible;
+
     [Header("Block's sprites")]
     public Sprite[] blockDamaged;
     public SpriteRenderer sRender;
+
     [Header("Pick-ups and effects")]
     public GameObject particlePrefab;
     public GameObject[] pickUps;
 
     [Header("Sounds")]
-    AudioSource audioSourceBlocks;
-    public AudioClip soundDestroy;
-    public AudioClip soundHit;
-    SoundManager soundManager;
+    AudioSource audioSource;
+    public AudioClip blockDestroyedSound;
     private void Awake()
     {
-        soundManager = FindObjectOfType<SoundManager>();
+        audioSource = GetComponent<AudioSource>();
     }
     private void Start()
     {
@@ -42,7 +43,7 @@ public class Blocks : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        soundManager.PlaySound(soundHit);
+        audioSource.Play();
         if (invisible)
         {
             sRender.enabled = true;
@@ -57,26 +58,33 @@ public class Blocks : MonoBehaviour
                 sRender.sprite = blockDamaged[i - 1];
             }
         }
-        
+
         if (lifeBlock <= 0)
         {
-            DestroyBlock();
+            SoundDestroy();
         }
-        
     }
     public void DestroyBlock()
     {
-        
         lc.BlockDestroyed();
         gamemanager.AddScore(points);
         Destroy(gameObject);
-        
         Instantiate(particlePrefab, transform.position, Quaternion.identity);
         PickUpChance();
     }
+    public IEnumerator Wait(float delayInSecs)
+    {
+        yield return new WaitForSeconds(delayInSecs);
+        DestroyBlock();
+    }
+    public void SoundDestroy()
+    {
+        audioSource.PlayOneShot(blockDestroyedSound);
+        StartCoroutine(Wait(0.144f));
+    }
     public void PickUpChance()
     {
-        int randomValue = Random.Range(0, 40);
+        int randomValue = Random.Range(0, 30);
         Debug.Log("Random value " + randomValue);
         for (int i = 0; i < pickUps.Length; i++)
         {
@@ -84,7 +92,7 @@ public class Blocks : MonoBehaviour
             {
                 Instantiate(pickUps[i], transform.position, Quaternion.identity);
             }
-            
+
         }
     }
 }

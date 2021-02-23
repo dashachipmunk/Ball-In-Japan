@@ -6,8 +6,11 @@ public class PickUpDuplicateBall : MonoBehaviour
 {
     void ApplyEffect()
     {
-        Ball balls = FindObjectOfType<Ball>();
-        balls.DuplicateBall();        
+        Ball[] balls = FindObjectsOfType<Ball>();
+        foreach (Ball bal in balls)
+        {
+            bal.DuplicateBall();
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

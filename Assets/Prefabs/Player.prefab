@@ -97,7 +97,7 @@ MonoBehaviour:
   xMax: 8.1
   ball: {fileID: 7730889725275115172, guid: 4d68509796203cc48b3d18b163fa4dd3, type: 3}
   autoplay: 0
-  gM: {fileID: 1247053224611311827, guid: 523078b8502765f4f96b0c285e3af86d, type: 3}
+  gM: {fileID: 703273808, guid: 523078b8502765f4f96b0c285e3af86d, type: 3}
   healthOver: {fileID: 25486864721814948, guid: e686a3b7243d331428e4f570770831e9,
     type: 3}
 --- !u!61 &4499935031191652348

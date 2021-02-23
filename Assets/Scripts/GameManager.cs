@@ -11,9 +11,9 @@ public class GameManager : MonoBehaviour
 
     public bool isPaused;
     public GameObject pausePanel;
+    public int bestResult;
     private void Awake()
     {
-        
         GameManager[] gameManagers = FindObjectsOfType<GameManager>();
         for (int i = 0; i < gameManagers.Length; i++)
         {
@@ -23,8 +23,13 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+        bestResult = PlayerPrefs.GetInt("BestScore");
     }
-   
+    private void Start()
+    {
+        isPaused = false;
+    }
+
     private void Update()
     {
         scoreText.text = "Score: " + score.ToString();
@@ -33,13 +38,13 @@ public class GameManager : MonoBehaviour
         {
             if (isPaused)
             {
-                pausePanel.active = false;
+                pausePanel.SetActive(false);
                 Time.timeScale = 1f;
                 isPaused = false;
             }
             else
             {
-                pausePanel.active = true;
+                pausePanel.SetActive(true);
                 Time.timeScale = 0f;
                 isPaused = true;
             }
@@ -49,5 +54,11 @@ public class GameManager : MonoBehaviour
     {
         score += addScore;
         scoreText.text = "Score: " + score.ToString();
+        PlayerPrefs.SetInt("BestScore", score);
+    }
+    public void RestartGM()
+    {
+        isPaused = false;
+        score = 0;
     }
 }

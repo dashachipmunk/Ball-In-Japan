@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 166380323502013667}
   - component: {fileID: 7410144584925895}
+  - component: {fileID: 2383946146235673423}
   - component: {fileID: 785569477542336052}
   - component: {fileID: 3804809028457826735}
-  - component: {fileID: 2383946146235673423}
   m_Layer: 9
   m_Name: square
   m_TagString: block
@@ -83,6 +83,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2383946146235673423
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6188887831467706608}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &785569477542336052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +147,7 @@ MonoBehaviour:
   - {fileID: 8337797861136397688, guid: eebc3dd918391d74a825fba202d20ded, type: 3}
   - {fileID: 3057972853312515166, guid: f5151de66b4b4a44bb362b04a222ffaf, type: 3}
   - {fileID: 4420496909028781548, guid: 62130cb4f87d62e478f886af4ba4d1b1, type: 3}
-  soundDestroy: {fileID: 8300000, guid: 7f9dbbd353d1f344597e7c402e7cc15b, type: 3}
+  blockDestroyedSound: {fileID: 8300000, guid: 887e67091840f98429f1bebcaca67b08, type: 3}
 --- !u!82 &3804809028457826735
 AudioSource:
   m_ObjectHideFlags: 0
@@ -132,7 +158,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 814fd949b4fadb745819cfe5806d974c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -218,29 +244,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!61 &2383946146235673423
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6188887831467706608}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0

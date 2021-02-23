@@ -4,29 +4,35 @@ using UnityEngine;
 
 public class LostBall : MonoBehaviour
 {
-    public Ball ball;
-    public GameManager gM;
     public HeartsBar health;
-    public AudioClip lostBallSound;
+    public Ball ball;
     AudioSource audioSource;
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void Start()
     {
-        ball = FindObjectOfType<Ball>();
-        gM = FindObjectOfType<GameManager>();
         health = FindObjectOfType<HeartsBar>();
+        ball = FindObjectOfType<Ball>();
     }
-
-    // Update is called once per frame
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("ball"))
         {
-            ball.Restart();
+            StartCoroutine(Wait(1.3f));
             health.MinusHeart();
+            audioSource.Play();
         }
         else
         {
             Destroy(collision.gameObject);
         }
+    }
+    public IEnumerator Wait(float delayInSecs)
+    {
+        yield return new WaitForSeconds(delayInSecs);
+        ball.Restart();
     }
 }

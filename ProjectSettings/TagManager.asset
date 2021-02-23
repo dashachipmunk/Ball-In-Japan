@@ -11,6 +11,7 @@ TagManager:
   - ball
   - heart
   - block
+  - pickup
   layers:
   - Default
   - TransparentFX

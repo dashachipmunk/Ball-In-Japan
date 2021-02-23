@@ -10,10 +10,16 @@ public class Player : MonoBehaviour
     public float xMax;
     [Tooltip("Ссылка на мяч")]
     public Ball ball;
+
     [Tooltip("Режим автоматической игры для проверки")]
     public bool autoplay;
+
+    [Tooltip("Ссылка на Game Manager")]
     public GameManager gM;
+
+    [Tooltip("Ссылка на жизни")]
     public HeartsBar healthOver;
+    AudioSource audioSource;
     void Start()
     {
         yPosition = transform.position.y;
@@ -21,11 +27,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (gM.isPaused)
+        if (gM.isPaused)//пад не двигается во время паузы
         {
             return;
         }
-        if (healthOver.isDead)
+        if (healthOver.isDead)//пад не двигается во время Гейм Овер
         {
             return;
         }
@@ -41,7 +47,6 @@ public class Player : MonoBehaviour
             Vector3 mousePixelPoint = Input.mousePosition;
             Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePixelPoint);
             Vector3 padNewPosition = new Vector3(mouseWorldPosition.x, yPosition, 0);
-
             padNewPosition.x = Mathf.Clamp(padNewPosition.x, -xMax, xMax);
             transform.position = padNewPosition;
         }
@@ -50,4 +55,5 @@ public class Player : MonoBehaviour
     {
         transform.localScale = new Vector3(1, transform.localScale.y * newSize, 1);
     }
+    
 }

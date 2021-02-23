@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class PickUpBallScale : MonoBehaviour
 {
-    public Ball balls;
     public float ballScale;
-
-    public AudioSource audioSource;
+    AudioSource audioSource;
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void ApplyEffect()
     {
-        balls = FindObjectOfType<Ball>();
-        balls.BallScale(ballScale);
+        Ball[] balls = FindObjectsOfType<Ball>();
+        foreach (Ball bal in balls)
+        {
+            bal.BallScale(ballScale);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        audioSource.Play();
         if (collision.gameObject.CompareTag("Player"))
         {
-            
+            audioSource.Play();
             ApplyEffect();
             Destroy(gameObject);
         }
