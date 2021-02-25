@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickUpMagnet : MonoBehaviour
 {
-    AudioSource audioSource;
+    SoundManager sM;
+    public AudioClip pickup;
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
+        sM = FindObjectOfType<SoundManager>();
     }
     void ApplyEffect()
     {
@@ -19,13 +21,12 @@ public class PickUpMagnet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        sM.PlaySound(pickup);
         if (collision.gameObject.CompareTag("Player"))
         {
-            audioSource.Play();
+            sM.PlaySound(pickup);
             ApplyEffect();
             Destroy(gameObject);
         }
-        
     }
-    
 }

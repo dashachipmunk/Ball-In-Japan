@@ -143,3 +143,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedCoeff: 2
+  pickup: {fileID: 8300000, guid: c568c6c35ae47f74f9501636c400f8be, type: 3}

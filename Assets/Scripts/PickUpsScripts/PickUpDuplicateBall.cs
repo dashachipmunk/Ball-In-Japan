@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PickUpDuplicateBall : MonoBehaviour
 {
+    SoundManager sM;
+    public AudioClip pickup;
+    private void Awake()
+    {
+        sM = FindObjectOfType<SoundManager>();
+    }
     void ApplyEffect()
     {
         Ball[] balls = FindObjectsOfType<Ball>();
@@ -16,6 +22,7 @@ public class PickUpDuplicateBall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            sM.PlaySound(pickup);
             ApplyEffect();
             Destroy(gameObject);
         }

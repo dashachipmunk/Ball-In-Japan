@@ -17,9 +17,10 @@ public class SoundManager : MonoBehaviour
             DontDestroyOnLoad(bgSoundOne);
         }
     }
+    
     public void PlaySound(AudioClip sound)
     {
         audioSource.PlayOneShot(sound);
     }
-   
+
 }

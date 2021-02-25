@@ -42,7 +42,7 @@ public class Ball : MonoBehaviour
     {
         ballSize = 1f;
         currentSpeed = initialSpeed;
-        yPosition = transform.position.y;
+        yPosition = -3.93f;
         isExplosive = false;
     }
     private void Update()
@@ -111,7 +111,7 @@ public class Ball : MonoBehaviour
         trailRenderer.startWidth = 0.5f;
         transform.localScale = new Vector3(ballSize, ballSize, ballSize);
         isStarted = false;
-        transform.position = new Vector3(pad.transform.position.x + xDelta, yPosition, 0);
+        transform.position = new Vector3(pad.transform.position.x, yPosition, 0);
         rb.velocity = rb.velocity.normalized * currentSpeed;
     }
     void Explode()
@@ -149,4 +149,5 @@ public class Ball : MonoBehaviour
             Explode();
         }
     }
+    
 }

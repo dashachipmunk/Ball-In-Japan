@@ -5,6 +5,12 @@ using UnityEngine;
 public class PickUpSpeed : MonoBehaviour
 {
     public float speedCoeff;
+    SoundManager sM;
+    public AudioClip pickup;
+    private void Awake()
+    {
+        sM = FindObjectOfType<SoundManager>();
+    }
     void ApplyEffect()
     {
         Ball[] balls = FindObjectsOfType<Ball>();
@@ -17,6 +23,7 @@ public class PickUpSpeed : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            sM.PlaySound(pickup);
             ApplyEffect();
             Destroy(gameObject);
         }

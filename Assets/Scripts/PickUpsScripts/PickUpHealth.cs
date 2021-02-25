@@ -5,6 +5,12 @@ using UnityEngine;
 public class PickUpHealth : MonoBehaviour
 {
     public int addHeart;
+    SoundManager sM;
+    public AudioClip pickup;
+    private void Awake()
+    {
+        sM = FindObjectOfType<SoundManager>();
+    }
     void ApplyEffect()
     {
         HeartsBar hearts = FindObjectOfType<HeartsBar>();
@@ -14,6 +20,7 @@ public class PickUpHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            sM.PlaySound(pickup);
             ApplyEffect();
             Destroy(gameObject);
         }

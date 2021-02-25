@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4499935031191652345}
   - component: {fileID: 4499935031191652344}
   - component: {fileID: 4499935031191652350}
-  - component: {fileID: 4499935031191652348}
+  - component: {fileID: -6297279970682220005}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -98,10 +98,9 @@ MonoBehaviour:
   ball: {fileID: 7730889725275115172, guid: 4d68509796203cc48b3d18b163fa4dd3, type: 3}
   autoplay: 0
   gM: {fileID: 703273808, guid: 523078b8502765f4f96b0c285e3af86d, type: 3}
-  healthOver: {fileID: 25486864721814948, guid: e686a3b7243d331428e4f570770831e9,
-    type: 3}
---- !u!61 &4499935031191652348
-BoxCollider2D:
+  healthOver: {fileID: 0}
+--- !u!60 &-6297279970682220005
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,6 +122,12 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.4, y: 1.6}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.2, y: 0.8}
+      - {x: -0.2, y: -0.7875}
+      - {x: -0.1875, y: -0.8}
+      - {x: 0.17851771, y: -0.8107392}
+      - {x: 0.2375946, y: -0.32987678}
+      - {x: 0.23736769, y: 0.3250917}
+      - {x: 0.17851748, y: 0.78389144}

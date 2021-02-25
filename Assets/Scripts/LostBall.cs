@@ -5,7 +5,9 @@ using UnityEngine;
 public class LostBall : MonoBehaviour
 {
     public HeartsBar health;
-    public Ball ball;
+    Ball[] balls;
+    Ball ball;
+    public int ballsLength;
     AudioSource audioSource;
     private void Awake()
     {
@@ -14,25 +16,40 @@ public class LostBall : MonoBehaviour
     void Start()
     {
         health = FindObjectOfType<HeartsBar>();
-        ball = FindObjectOfType<Ball>();
     }
-   
+
+    private void Update()
+    {
+        balls = FindObjectsOfType<Ball>();
+        ballsLength = balls.Length;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("ball"))
         {
-            StartCoroutine(Wait(1.3f));
-            health.MinusHeart();
+            ballsLength--;
+            if (ballsLength == 0)
+            {
+                Invoke("BallRestart", 1.3f);
+                health.MinusHeart();
+                StartCoroutine(Wait(1f));
+            }
             audioSource.Play();
+            if (ballsLength > 0)
+            {
+                Destroy(collision.gameObject);
+            }
         }
-        else
-        {
-            Destroy(collision.gameObject);
-        }
+    }
+    public void BallRestart()
+    {
+        ball = FindObjectOfType<Ball>();
+        ball.Restart();
     }
     public IEnumerator Wait(float delayInSecs)
     {
         yield return new WaitForSeconds(delayInSecs);
-        ball.Restart();
+        Destroy(gameObject.GetComponent<Ball>());
     }
 }

@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+       
         isPaused = false;
     }
 
@@ -56,9 +57,5 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + score.ToString();
         PlayerPrefs.SetInt("BestScore", score);
     }
-    public void RestartGM()
-    {
-        isPaused = false;
-        score = 0;
-    }
+    
 }

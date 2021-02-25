@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSize: 1.5
+  pickup: {fileID: 8300000, guid: c568c6c35ae47f74f9501636c400f8be, type: 3}
 --- !u!50 &-6598524344982310931
 Rigidbody2D:
   serializedVersion: 4

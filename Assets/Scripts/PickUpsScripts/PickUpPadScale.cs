@@ -5,6 +5,12 @@ using UnityEngine;
 public class PickUpPadScale : MonoBehaviour
 {
     public float newSize;
+    SoundManager sM;
+    public AudioClip pickup;
+    private void Awake()
+    {
+        sM = FindObjectOfType<SoundManager>();
+    }
     void ApplyEffect()
     {
         Player pad  = FindObjectOfType<Player>();
@@ -14,6 +20,7 @@ public class PickUpPadScale : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            sM.PlaySound(pickup);
             ApplyEffect();
             Destroy(gameObject);
         }

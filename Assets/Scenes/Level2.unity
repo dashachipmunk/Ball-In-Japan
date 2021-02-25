@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 25486864721814948, guid: e686a3b7243d331428e4f570770831e9, type: 3}
-  ball: {fileID: 7730889725275115172, guid: 4d68509796203cc48b3d18b163fa4dd3, type: 3}
+  ballsLength: 0
 --- !u!61 &907422802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1317,7 +1317,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9797a2bd37c1f7e4b8197f42688cb981, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.025
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2035,9 +2035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26525525cc5fd3849b71efb7087086f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballRestart: {fileID: 0}
-  heartRestart: {fileID: 0}
-  gM: {fileID: 0}
 --- !u!4 &1794344831
 Transform:
   m_ObjectHideFlags: 0

@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSize: 0.75
+  pickup: {fileID: 8300000, guid: c568c6c35ae47f74f9501636c400f8be, type: 3}
 --- !u!61 &-2699075007584756407
 BoxCollider2D:
   m_ObjectHideFlags: 0

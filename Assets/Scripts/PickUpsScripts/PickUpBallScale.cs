@@ -5,10 +5,11 @@ using UnityEngine;
 public class PickUpBallScale : MonoBehaviour
 {
     public float ballScale;
-    AudioSource audioSource;
+    SoundManager sM;
+    public AudioClip pickup;
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
+        sM = FindObjectOfType<SoundManager>();
     }
     void ApplyEffect()
     {
@@ -22,7 +23,7 @@ public class PickUpBallScale : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            audioSource.Play();
+            sM.PlaySound(pickup);
             ApplyEffect();
             Destroy(gameObject);
         }

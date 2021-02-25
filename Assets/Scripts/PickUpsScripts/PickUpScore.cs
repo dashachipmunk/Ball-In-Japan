@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Obsolete]
 public class PickUpScore : MonoBehaviour
 {
     public int pickUpPoints;
-    
+    SoundManager sM;
+    public AudioClip pickup;
+    private void Awake()
+    {
+        sM = FindObjectOfType<SoundManager>();
+    }
     void ApplyEffect()
     {
         GameManager gM = FindObjectOfType<GameManager>();
@@ -15,6 +19,7 @@ public class PickUpScore : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            sM.PlaySound(pickup);
             ApplyEffect();
             Destroy(gameObject);
         }

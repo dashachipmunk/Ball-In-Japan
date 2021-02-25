@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PickUpExplode : MonoBehaviour
 {
+    SoundManager sM;
+    public AudioClip pickup;
+    private void Awake()
+    {
+        sM = FindObjectOfType<SoundManager>();
+    }
     void ApplyEffect()
     {
         Ball[] balls = FindObjectsOfType<Ball>();
@@ -16,6 +22,7 @@ public class PickUpExplode : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            sM.PlaySound(pickup);
             ApplyEffect();
             Destroy(gameObject);
         }

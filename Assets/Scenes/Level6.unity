@@ -1674,9 +1674,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26525525cc5fd3849b71efb7087086f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballRestart: {fileID: 0}
-  heartRestart: {fileID: 0}
-  gM: {fileID: 0}
 --- !u!4 &1114350057
 Transform:
   m_ObjectHideFlags: 0
@@ -2564,18 +2561,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d68509796203cc48b3d18b163fa4dd3, type: 3}
---- !u!114 &1619342524 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7730889725275115172, guid: 4d68509796203cc48b3d18b163fa4dd3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1619342523}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b42d63f920ade5a4c987ff57b873195e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1637822334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2908,7 +2893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 1888314504}
-  ball: {fileID: 1619342524}
+  ballsLength: 0
 --- !u!61 &1690931495
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2996,7 +2981,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9797a2bd37c1f7e4b8197f42688cb981, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.025
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 0
   Mute: 0

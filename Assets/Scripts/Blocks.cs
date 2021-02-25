@@ -26,9 +26,11 @@ public class Blocks : MonoBehaviour
     [Header("Sounds")]
     AudioSource audioSource;
     public AudioClip blockDestroyedSound;
+    SoundManager sM;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        sM = FindObjectOfType<SoundManager>();
     }
     private void Start()
     {
@@ -61,7 +63,8 @@ public class Blocks : MonoBehaviour
 
         if (lifeBlock <= 0)
         {
-            SoundDestroy();
+            sM.PlaySound(blockDestroyedSound);
+            DestroyBlock();
         }
     }
     public void DestroyBlock()
@@ -72,27 +75,25 @@ public class Blocks : MonoBehaviour
         Instantiate(particlePrefab, transform.position, Quaternion.identity);
         PickUpChance();
     }
-    public IEnumerator Wait(float delayInSecs)
-    {
-        yield return new WaitForSeconds(delayInSecs);
-        DestroyBlock();
-    }
-    public void SoundDestroy()
-    {
-        audioSource.PlayOneShot(blockDestroyedSound);
-        StartCoroutine(Wait(0.144f));
-    }
+    //public IEnumerator Wait(float delayInSecs)
+    //{
+    //    yield return new WaitForSeconds(delayInSecs);
+    //    
+    //}
+    //public void SoundDestroy()
+    //{
+    //    audioSource.PlayOneShot(blockDestroyedSound);
+    //    StartCoroutine(Wait(0.144f));
+    //}
     public void PickUpChance()
     {
         int randomValue = Random.Range(0, 30);
-        Debug.Log("Random value " + randomValue);
         for (int i = 0; i < pickUps.Length; i++)
         {
             if (randomValue == i)
             {
                 Instantiate(pickUps[i], transform.position, Quaternion.identity);
             }
-
         }
     }
 }
