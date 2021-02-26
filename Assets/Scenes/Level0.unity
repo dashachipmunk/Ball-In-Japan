@@ -306,18 +306,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &365631678 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2930305630670355540, guid: 523078b8502765f4f96b0c285e3af86d,
-    type: 3}
-  m_PrefabInstance: {fileID: 645196341}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e2286dc8495eca4f818b7b6d4e3de74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &411654760
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,11 +409,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8018906191704960555, guid: 523078b8502765f4f96b0c285e3af86d,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1247053224611311826, guid: 523078b8502765f4f96b0c285e3af86d,
         type: 3}
       propertyPath: m_Name
@@ -487,6 +470,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5701821421371550385, guid: 523078b8502765f4f96b0c285e3af86d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8018906191704960555, guid: 523078b8502765f4f96b0c285e3af86d,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066626721079559245, guid: 523078b8502765f4f96b0c285e3af86d,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -579,6 +572,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 024627558c339c4479cf96d2da6cdc9e, type: 3}
+--- !u!114 &830584637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2506907954225139841, guid: 523078b8502765f4f96b0c285e3af86d,
+    type: 3}
+  m_PrefabInstance: {fileID: 645196341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2286dc8495eca4f818b7b6d4e3de74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &882011247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,16 +1362,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: large_ball
       objectReference: {fileID: 0}
-    - target: {fileID: 7973855946587333443, guid: 911f35b0592d83d4e92deab765dc936d,
-        type: 3}
-      propertyPath: pickUpSound
-      value: 
-      objectReference: {fileID: 8300000, guid: c568c6c35ae47f74f9501636c400f8be, type: 3}
-    - target: {fileID: 7973855946587333443, guid: 911f35b0592d83d4e92deab765dc936d,
-        type: 3}
-      propertyPath: pickupSound
-      value: 
-      objectReference: {fileID: 8300000, guid: c568c6c35ae47f74f9501636c400f8be, type: 3}
     - target: {fileID: 8390921086276887567, guid: 911f35b0592d83d4e92deab765dc936d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1422,6 +1417,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7973855946587333443, guid: 911f35b0592d83d4e92deab765dc936d,
+        type: 3}
+      propertyPath: pickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c568c6c35ae47f74f9501636c400f8be, type: 3}
+    - target: {fileID: 7973855946587333443, guid: 911f35b0592d83d4e92deab765dc936d,
+        type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c568c6c35ae47f74f9501636c400f8be, type: 3}
     - target: {fileID: 3570287479906423856, guid: 911f35b0592d83d4e92deab765dc936d,
         type: 3}
       propertyPath: m_Enabled
@@ -1450,7 +1455,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthOver
       value: 
-      objectReference: {fileID: 365631678}
+      objectReference: {fileID: 830584637}
     - target: {fileID: 4499935031191652345, guid: ebfd4262f01ecc243ad9ffc8fc1ca01d,
         type: 3}
       propertyPath: m_LocalPosition.x

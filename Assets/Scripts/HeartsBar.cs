@@ -11,8 +11,8 @@ public class HeartsBar : MonoBehaviour
     public Sprite emptyHeart;
 
     [Header("Lives")]
-    public int health;
-    public int healthNumber;
+    public int health; //здоровье = заполненные сердечки
+    public int heartsNumber; //количество ВИДИМЫХ сердечек на канвасе (заполненных и незаполненных)
 
     [Header("Ball")]
     public Ball ball;
@@ -30,7 +30,7 @@ public class HeartsBar : MonoBehaviour
     public void MinusHeart()
     {
         health--;
-        for (int i = 0; i < healthNumber; i++)
+        for (int i = 0; i < heartsNumber; i++)
         {
             if (i < health)
             {
@@ -40,7 +40,7 @@ public class HeartsBar : MonoBehaviour
             {
                 hearts[i].sprite = emptyHeart;
             }
-            if (i < healthNumber)
+            if (i < heartsNumber)
             {
                 hearts[i].enabled = true;
             }
@@ -55,15 +55,15 @@ public class HeartsBar : MonoBehaviour
     {
         if (addHeart > 0)
         {
-            if (health < healthNumber)
+            if (health < heartsNumber)
             {
-                hearts[healthNumber - 1].sprite = fullHeart;
+                hearts[heartsNumber - 1].sprite = fullHeart;
                 health++;
             }
-            else if (health == healthNumber)
+            else if (health == heartsNumber)
             {
-                healthNumber++;
-                hearts[healthNumber - 1].enabled = true;
+                heartsNumber++;
+                hearts[heartsNumber - 1].enabled = true;
                 health++;
             }
         }
@@ -74,11 +74,13 @@ public class HeartsBar : MonoBehaviour
     }
     public void HeartsStart()
     {
-        for (int j = 0; j < hearts.Length; j++)
+        isDead = false;
+        for (int j = 0; j < hearts.Length; j++) //т.к. всего сердец 5, но видно только 3 в начале игры, надо их сделать НЕвидимыми все
         {
             hearts[j].enabled = false;
         }
-        for (int k = 0; k < healthNumber; k++)
+        health = 3;
+        for (int k = 0; k < heartsNumber; k++) //а после этого сделать видимыми только нужное количество (указывается в инспекторе)
         {
             hearts[k].enabled = true;
         }

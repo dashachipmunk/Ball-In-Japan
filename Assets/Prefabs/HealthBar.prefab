@@ -130,7 +130,7 @@ MonoBehaviour:
   fullHeart: {fileID: 21300000, guid: b1d5e1e216dd1874596f6158465751bb, type: 3}
   emptyHeart: {fileID: 21300000, guid: f59ae3934dba4a9438a98e9a895ab2ca, type: 3}
   health: 3
-  healthNumber: 3
+  heartsNumber: 3
   ball: {fileID: 7730889725275115172, guid: 4d68509796203cc48b3d18b163fa4dd3, type: 3}
   gameOverPanel: {fileID: 0}
   score: {fileID: 0}

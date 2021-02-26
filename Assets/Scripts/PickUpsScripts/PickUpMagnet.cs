@@ -21,7 +21,6 @@ public class PickUpMagnet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        sM.PlaySound(pickup);
         if (collision.gameObject.CompareTag("Player"))
         {
             sM.PlaySound(pickup);

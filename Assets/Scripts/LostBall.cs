@@ -41,6 +41,10 @@ public class LostBall : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+        else
+        {
+            Destroy(collision.gameObject);
+        }
     }
     public void BallRestart()
     {

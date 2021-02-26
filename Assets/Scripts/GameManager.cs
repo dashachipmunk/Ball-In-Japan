@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
     public GameObject pausePanel;
     public int bestResult;
+
+
     private void Awake()
     {
         GameManager[] gameManagers = FindObjectsOfType<GameManager>();
@@ -27,14 +29,18 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-       
+        DontDestroyOnLoad(gameObject);
         isPaused = false;
+        Time.timeScale = 1f;
+        score = 0;
+        HeartsBar hearts = FindObjectOfType<HeartsBar>();
+        hearts.HeartsStart();
     }
 
     private void Update()
     {
         scoreText.text = "Score: " + score.ToString();
-        DontDestroyOnLoad(gameObject);
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)

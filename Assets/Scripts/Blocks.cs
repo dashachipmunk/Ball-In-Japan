@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-
 public class Blocks : MonoBehaviour
 {
     [Header("Block's points")]
@@ -75,16 +73,6 @@ public class Blocks : MonoBehaviour
         Instantiate(particlePrefab, transform.position, Quaternion.identity);
         PickUpChance();
     }
-    //public IEnumerator Wait(float delayInSecs)
-    //{
-    //    yield return new WaitForSeconds(delayInSecs);
-    //    
-    //}
-    //public void SoundDestroy()
-    //{
-    //    audioSource.PlayOneShot(blockDestroyedSound);
-    //    StartCoroutine(Wait(0.144f));
-    //}
     public void PickUpChance()
     {
         int randomValue = Random.Range(0, 30);
