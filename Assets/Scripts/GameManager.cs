@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
         isPaused = false;
         Time.timeScale = 1f;
         score = 0;
@@ -40,7 +39,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         scoreText.text = "Score: " + score.ToString();
-        
+        DontDestroyOnLoad(gameObject);
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)

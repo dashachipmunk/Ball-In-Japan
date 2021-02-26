@@ -374,20 +374,120 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9164085187320462940, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_Name
+      value: GO Info
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669150260810144360, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_Name
+      value: GO Buttons
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211771144730931436, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_Name
+      value: Restart Button
+      objectReference: {fileID: 0}
     - target: {fileID: 8838269177813477116, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838269177813477116, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
+      objectReference: {fileID: 2506907954225139841}
+    - target: {fileID: 8838269177813477116, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: HeartsStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838269177813477116, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838269177813477116, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838269177813477116, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813085328460399695, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_Name
+      value: Lvl 1 Button
       objectReference: {fileID: 0}
     - target: {fileID: 1665394328649888470, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665394328649888470, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
+      objectReference: {fileID: 2506907954225139841}
+    - target: {fileID: 1665394328649888470, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: HeartsStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665394328649888470, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665394328649888470, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665394328649888470, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804523042328720384, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_Name
+      value: Back to Menu Bttn
       objectReference: {fileID: 0}
     - target: {fileID: 8055858098476263746, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055858098476263746, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
+      objectReference: {fileID: 2506907954225139841}
+    - target: {fileID: 8055858098476263746, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: HeartsStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055858098476263746, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055858098476263746, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055858098476263746, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3403609962506674683, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
         type: 3}
@@ -420,3 +520,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1006095722958827898}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2506907954225139841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3403609962506674683, guid: 1292f4f75494cfa41a0a15dd9c5e369e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1006095722958827898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2286dc8495eca4f818b7b6d4e3de74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

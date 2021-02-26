@@ -24,6 +24,10 @@ public class HeartsBar : MonoBehaviour
     public bool isDead;
     private void Start()
     {
+        for (int j = 0; j < hearts.Length; j++) //т.к. всего сердец 5, но видно только 3 в начале игры, надо их сделать НЕвидимыми все
+        {
+            hearts[j].enabled = false;
+        }
         HeartsStart();
     }
 
@@ -75,15 +79,15 @@ public class HeartsBar : MonoBehaviour
     public void HeartsStart()
     {
         isDead = false;
-        for (int j = 0; j < hearts.Length; j++) //т.к. всего сердец 5, но видно только 3 в начале игры, надо их сделать НЕвидимыми все
-        {
-            hearts[j].enabled = false;
-        }
-        health = 3;
+        Time.timeScale = 1f;
+        health = heartsNumber;
         for (int k = 0; k < heartsNumber; k++) //а после этого сделать видимыми только нужное количество (указывается в инспекторе)
         {
+            hearts[k].sprite = fullHeart;
             hearts[k].enabled = true;
         }
+        
+
     }
 
     public void GameOver()

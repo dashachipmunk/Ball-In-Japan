@@ -294,17 +294,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5334481568999420027, guid: 523078b8502765f4f96b0c285e3af86d,
-        type: 3}
-      propertyPath: bgSound
-      value: 
-      objectReference: {fileID: 8081089769534257585, guid: b5cb00d8793276c4993f0353ae5611b7,
-        type: 3}
-    - target: {fileID: 7066626721079559245, guid: 523078b8502765f4f96b0c285e3af86d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8597803005202077574, guid: 523078b8502765f4f96b0c285e3af86d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
