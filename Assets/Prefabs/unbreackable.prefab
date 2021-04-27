@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8717158833028258925}
   - component: {fileID: 2976625396104772192}
-  - component: {fileID: -5747881600181775285}
+  - component: {fileID: -5531188003026713883}
   m_Layer: 9
   m_Name: unbreackable
   m_TagString: block
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-5747881600181775285
+--- !u!61 &-5531188003026713883
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

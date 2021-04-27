@@ -13,13 +13,7 @@ public class Player : MonoBehaviour
 
     [Tooltip("Режим автоматической игры для проверки")]
     public bool autoplay;
-
-    [Tooltip("Ссылка на Game Manager")]
-    public GameManager gM;
-
-    [Tooltip("Ссылка на жизни")]
-    public HeartsBar healthOver;
-    AudioSource audioSource;
+        
     void Start()
     {
         yPosition = transform.position.y;
@@ -27,14 +21,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (gM.isPaused)//пад не двигается во время паузы
+        if (Time.timeScale == 0f)//пад не двигается во время паузы/смерти
         {
             return;
         }
-        if (healthOver.isDead)//пад не двигается во время Гейм Овер
-        {
-            return;
-        }
+        
         if (autoplay)
         {
             Vector3 ballPos = ball.transform.position;

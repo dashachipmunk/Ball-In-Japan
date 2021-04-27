@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 445cbd3321fba914d83e0af8258adb9a, type: 3}
-  m_Name: Block
+  m_Script: {fileID: 11500000, guid: c5466ec16b7d8bb42829b353fb589526, type: 3}
+  m_Name: Data
   m_EditorClassIdentifier: 
-  block: {fileID: 21300000, guid: 6f4eb7e74e3841d42af8766446bf2f10, type: 3}
-  nextBlock:
-  - {fileID: 21300000, guid: 123efc52a53105a488b43ecf16a97173, type: 3}
+  score: 0
+  health: 3

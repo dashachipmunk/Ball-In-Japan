@@ -8,12 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public Text scoreText;
     public int score;
-
     public bool isPaused;
     public GameObject pausePanel;
     public int bestResult;
-
-
     private void Awake()
     {
         GameManager[] gameManagers = FindObjectsOfType<GameManager>();
@@ -21,21 +18,14 @@ public class GameManager : MonoBehaviour
         {
             if (gameManagers[i].gameObject != gameObject)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                gameObject.SetActive(false);
                 break;
             }
         }
         bestResult = PlayerPrefs.GetInt("BestScore");
     }
-    private void Start()
-    {
-        isPaused = false;
-        Time.timeScale = 1f;
-        score = 0;
-        HeartsBar hearts = FindObjectOfType<HeartsBar>();
-        hearts.HeartsStart();
-    }
-
+   
     private void Update()
     {
         scoreText.text = "Score: " + score.ToString();

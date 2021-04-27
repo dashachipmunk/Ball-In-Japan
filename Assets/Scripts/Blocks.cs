@@ -6,8 +6,8 @@ public class Blocks : MonoBehaviour
 {
     [Header("Block's points")]
     public int points;
-    public GameManager gamemanager;
-    public LevelChanger lc;
+    GameManager gamemanager;
+    LevelChanger lc;
 
     [Header("Block's lives")]
     public int lifeBlock;
@@ -29,12 +29,12 @@ public class Blocks : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         sM = FindObjectOfType<SoundManager>();
-    }
-    private void Start()
-    {
         gamemanager = FindObjectOfType<GameManager>();
         sRender = GetComponent<SpriteRenderer>();
         lc = FindObjectOfType<LevelChanger>();
+    }
+    private void Start()
+    {
         lc.BlockCreated();
         if (invisible)
         {

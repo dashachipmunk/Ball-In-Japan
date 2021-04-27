@@ -11,19 +11,22 @@ public class HeartsBar : MonoBehaviour
     public Sprite emptyHeart;
 
     [Header("Lives")]
-    public int health; //здоровье = заполненные сердечки
+    public int health; //- здоровье = заполненные сердечки
     public int heartsNumber; //количество ВИДИМЫХ сердечек на канвасе (заполненных и незаполненных)
+    [SerializeField] private int startHeartsNumber;
 
     [Header("Ball")]
     public Ball ball;
 
     [Header("Game Over")]
     public GameObject gameOverPanel;
-    public GameManager score;
+    GameManager gm;
     public Text totalScore;
     public bool isDead;
+
     private void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         for (int j = 0; j < hearts.Length; j++) //т.к. всего сердец 5, но видно только 3 в начале игры, надо их сделать НЕвидимыми все
         {
             hearts[j].enabled = false;
@@ -75,19 +78,23 @@ public class HeartsBar : MonoBehaviour
         {
             MinusHeart();
         }
+
     }
     public void HeartsStart()
     {
         isDead = false;
+        gm.isPaused = false;
+        gm.score = 0;
         Time.timeScale = 1f;
-        health = heartsNumber;
+        heartsNumber = startHeartsNumber;
+        health = startHeartsNumber;
         for (int k = 0; k < heartsNumber; k++) //а после этого сделать видимыми только нужное количество (указывается в инспекторе)
         {
             hearts[k].sprite = fullHeart;
             hearts[k].enabled = true;
+            hearts[k + 1].enabled = false;
+            hearts[k + 2].enabled = false;
         }
-        
-
     }
 
     public void GameOver()
@@ -97,8 +104,7 @@ public class HeartsBar : MonoBehaviour
             isDead = true;
             gameOverPanel.SetActive(true);
             Time.timeScale = 0f;
-            totalScore.text = "Total score: " + score.score.ToString();
-            
+            totalScore.text = "Total score: " + gm.score.ToString();
         }
     }
 }

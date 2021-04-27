@@ -5,16 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class Scenes : MonoBehaviour
 {
-    GameManager gM;
+    SoundManager sm;
+    private void Start()
+    {
+        sm = FindObjectOfType<SoundManager>();
+    }
     public void ChangeScene(string scene)
     {
         SceneManager.LoadScene(scene);
+        if (scene == "Main")
+        {
+            print("hi");
+        }
     }
-    public void RestartScene(string restartScene)
+    public void RestartScene()
     {
-        
-        SceneManager.LoadScene(restartScene);
-        DestroyImmediate(gM.gameObject);
+        int index = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(index);
     }
     public void ExitGame()
     {
